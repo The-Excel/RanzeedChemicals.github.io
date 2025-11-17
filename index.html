@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RANZEED CHEMICALS ENTERPRISES</title>
+<meta name="description" content="Supplier of domestic & industrial chemicals, paints, and plastic packaging." />
+<style>
+  :root{
+    --navy: #0b3d91;
+    --royal: #1e66d0;
+    --sky: #7fb1ff;
+    --teal: #0e9aa7;
+    --muted:#f6f9ff;
+    --glass: rgba(255,255,255,0.06);
+    --card-shadow: 0 8px 24px rgba(11,61,145,0.12);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:linear-gradient(180deg,var(--muted),#eef6ff);color:#073763}
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:url('images/logo.png');
+    background-repeat:no-repeat;background-position:75% 12%;background-size:20rem;
+    opacity:0.04;filter:grayscale(1);
+  }
+
+  /* Layout */
+  .container{display:flex;max-width:1200px;margin:0 auto;padding:18px;gap:24px;}
+  .sidebar{width:280px;position:sticky;top:20px;align-self:flex-start;background:#fff;padding:24px;border-radius:12px;box-shadow:var(--card-shadow);}
+  .sidebar h3{margin-bottom:12px;color:var(--navy);}
+  .sidebar a{display:block;padding:10px 12px;margin:6px 0;border-radius:8px;text-decoration:none;color:var(--royal);background:var(--glass);transition:0.3s;font-weight:600;}
+  .sidebar a:hover{background:rgba(30,102,208,0.1);}
+
+  main{flex:1;display:flex;flex-direction:column;gap:14px;}
+
+    header{position:relative;z-index:5}
+    .topbar{
+      background:linear-gradient(90deg,var(--navy),var(--royal));
+      color:#fff;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:70px;height:70px;object-fit:contain;border-radius:8px;background:rgba(255,255,255,0.06);padding:0px}
+    nav a{color:rgba(7, 240, 220, 0.95);text-decoration:none;margin-left:18px;font-weight:600}
+
+    .hero{
+      background:linear-gradient(135deg,var(--royal),var(--sky));
+      color:#fff;padding:10px 12px 20px;border-bottom-left-radius:28px;border-bottom-right-radius:28px;box-shadow: var(--card-shadow);margin-bottom:28px;position:relative;overflow:hidden
+    } 
+    .hero .container{max-width:1100px;margin:0 auto;display:flex;gap:28px;align-items:center}
+    .hero h1{font-size:2.25rem;margin-bottom:8px;letter-spacing:-0.5px}
+    .tag {display:inline-block;background: #dbeafe;color: #1e40af;padding: 4px 10px;border-radius: 20px;font-size: 14px;width: fit-content;margin-bottom: 8px;font-weight: bold;
+  }
+    .cta{margin-top:18px}
+    .btn{background:#fff;color:var(--navy);padding:1px 8px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-block;box-shadow:0 6px 18px rgba(11,61,145,0.12)}
+
+    main{position:relative;z-index:6}
+    .container{max-width:1100px;margin:0 auto;padding:0 18px}
+
+  /* Service cards / content */
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:12px}
+  .card{background:#fff;padding:24px;border-radius:14px;box-shadow:var(--card-shadow)}
+  .card h3{margin-bottom:6px}
+  .feature-icon{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:linear-gradient(180deg,rgba(14,154,167,0.12),rgba(30,102,208,0.06))}
+  
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+  .thumb{border-radius:10px;overflow:hidden;cursor:pointer;box-shadow:0 8px 18px rgba(11,61,145,0.06);background:#fff}
+  .thumb img{display:block;width:100%;height:140px;object-fit:cover}
+
+  .lightbox{position:fixed;inset:0;background:rgba(2,6,23,0.7);display:none;align-items:center;justify-content:center;padding:20px;z-index:40}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:calc(100% - 80px);max-height:calc(100% - 120px);border-radius:10px;box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+  .lightbox .caption{color:#fff;margin-top:12px;text-align:center}
+
+  .contact{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:18px}
+  input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-top:8px}
+  button.submit{background:linear-gradient(90deg,var(--navy),var(--royal));color:#fff;padding:10px 14px;border:none;border-radius:10px;margin-top:8px;font-weight:700}
+
+  footer{margin-top:28px;padding:28px 18px;background:linear-gradient(180deg,#f7fbff,#eef6ff);border-top:1px solid rgba(11,61,145,0.04)}
+  .footer-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
+
+  @media (max-width:900px){.container{flex-direction:column}.sidebar{width:100%;position:relative;top:auto}}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="topbar">
+      <div class="brand">
+        <img src="images/Ranzeed6.jpg" alt="RANZEED logo" />
+        <div>
+          <div style="font-weight:800">RANZEED CHEMICALS</div>
+          <div style="font-size:12px;opacity:0.9">Domestic & Industrial Chemicals • Paints • Packaging</div>
+          <span class="tag"><h6>Trusted Supplier • Since 2020</h6></span>
+        </div>
+      </div>
+      <nav>
+        <h5>
+        <li><a href="index.html"><active>Home</a></li>
+        <li><a href="generic.html">Products & Services</a></li>
+        <li><a href="elements.html">Contact </a></li>
+         </h5>
+      </nav>
+    </div>
+ <section class="hero">
+    <div class="container">
+      <div style="flex:1">
+      <h2>RANZEED CHEMICALS ENTERPRISES</h2>
+      <p style="max-width:100ch;opacity:0.95">We supply high-quality domestic and industrial chemicals, premium paints and varnishes, and robust plastic packaging solutions — tailored for both small businesses and large industries.</p>
+  <div class="cta"><a class="btn" href="#contact">Quick Contact</a></div>
+</header>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h3>Quick Navigation</h3>
+    <a href="#welcome">Welcome</a>
+    <a href="#who">Who We Are</a>
+    <a href="#what">What We Do</a>
+    <a href="#services">Products & Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <section id="welcome" class="card">
+      <h3>Welcome</h3>
+      <p>We are committed to delivering top‑quality chemical products and packaging solutions for domestic, commercial, and industrial needs.</p>
+    </section>
+
+  <!-- Intro -->
+  <section id="intro" class="card">
+    <h2>Ranzeed Chemicals Enterprises</h2>
+    <p><em>'Your reliable home of chemicals, chemical products, and packaging solutions...'</em></p>
+  </section>
+
+    <div class="card">
+      <img src="images/Drums3.jpg" alt="Chem Bag" style="width:100%;border-radius:12px;margin-bottom:12px;">
+      <h3>Your Trusted Partner in Quality Chemicals & Packaging Solutions</h3>
+      <p>Ranzeed Chemicals Enterprises is a leading supplier of domestic and industrial chemicals, paints, and plastic packaging solutions.
+      With years of experience in the chemical and materials supply industry, we have built a solid reputation for quality products, integrity, and customer satisfaction.</p>
+      <br><a href="#oneA" class="btn">Learn more</a>
+    </div>
+
+<!-- Wrapper / Detailed Sections -->
+<div id="wrapper">
+
+    <section id="who" class="card">
+      <h3>Who We Are</h3>
+      <p>Ranzeed Chemicals Enterprises is a trusted supplier known for reliability, quality products, and professional service.</p>
+    </section>
+
+  <!-- One / Spotlights -->
+  <section id="one" class="services" style="gap:24px;margin-top:12px">
+
+    <div class="card" id="oneA">
+      <img src="images/Chem2.jpg" alt="Our Mission" style="width:100%;border-radius:12px;margin-bottom:12px;">
+      <h3>Our Mission</h3>
+      <p>To deliver superior and affordable chemicals, chemical products, and plastic packaging solutions that meet the highest standards in terms of performance, safety, and value - building exceptional customer experience.</p>
+      <br><a href="#oneB" class="btn">Learn more</a>
+    </div>
+
+    <div class="card" id="oneB">
+      <img src="images/Chem3.jpg" alt="Our Vision" style="width:100%;border-radius:12px;margin-bottom:12px;">
+      <h3>Our Vision</h3>
+      <p>To be a leading and trusted brand in chemicals, chemical products and packaging solutions across Nigeria, recognized for quality, integrity, and innovation.</p>
+      <br><a href="#oneC" class="btn">Learn more</a>
+    </div>
+
+    <div class="card" id="oneC">
+      <img src="images/Buckets4.jpg" alt="Core Values" style="width:100%;border-radius:12px;margin-bottom:12px;">
+      <h3>Our Core Values</h3>
+      <ul>
+        <li><em>Quality</em> - Only the best, tested, and trusted products.</li>
+        <li><em>Customer Focus</em> - We tailor our solutions to meet your exact needs.</li>
+        <li><em>Integrity</em> - Transparency and honesty guide every transaction.</li>
+        <li><em>Sustainability</em> - Promoting safe and environmentally responsible practices.</li>
+      </ul>
+      <br><a href="#two" class="btn">Learn more</a>
+    </div>
+  </section>
+
+  <!-- Two / Features -->
+
+    <section id="what" class="card" style="gap:24px;margin-top:12px">
+      <h3>What We Do</h3>
+      <p>We supply a wide range of chemicals, paints, industrial materials, and durable plastic containers for diverse sectors.</p>
+    </section>
+
+  <section id="two" class="services" style="gap:24px;margin-top:12px">
+
+    <div class="card">
+      <h3>Domestic Chemicals</h3>
+      <p>We supply a range of domestic-use chemicals for cleaning, disinfection, and household maintenance purposes.</p>
+      <ul>
+        <li>Liquid soaps and detergents</li>
+        <li>Bleaching agents and disinfectants</li>
+        <li>Fragrance and air freshener bases</li>
+        <li>Floor and surface cleaners</li>
+      </ul>
+      <em>....Ideal for households, cleaning services, and small-scale producers...</em>
+    </div>
+
+    <div class="card">
+      <h3>Industrial Chemicals</h3>
+      <p>Our industrial chemical division caters to manufacturing, production, and processing facilities.</p>
+      <ul>
+        <li>Industrial solvents and reagents</li>
+        <li>Degreasers and descaling agents</li>
+        <li>Surfactants, thickeners, and preservatives</li>
+        <li>Textile, paint, and adhesive chemicals</li>
+      </ul>
+      <em>....We ensure compliance with industry standards and safety regulations...</em>
+    </div>
+
+    <div class="card">
+      <h3>Paints & Coatings</h3>
+      <p>Enhance the beauty and durability of your spaces with our premium-grade paints and finishes...</p>
+      <ul>
+        <li>Wall Paints (Interior & Exterior)</li>
+        <li>Floor Paints</li>
+        <li>Matte Paints</li>
+        <li>Satin Paints</li>
+        <li>Varnishes & Coatings</li>
+      </ul>
+      <em>....Our paints are long-lasting, easy to apply, and available in a variety of colors and finishes...</em>
+    </div>
+
+    <div class="card">
+      <h3>Plastic Packaging Solutions</h3>
+      <p>We provide durable and cost-effective plastic containers for various packaging needs.</p>
+      <ul>
+        <li>Plastic Bottles (various sizes and designs)</li>
+        <li>Plastic Buckets</li>
+        <li>Plastic Jerry Cans</li>
+        <li>Plastic Containers for chemicals, paints, and cosmetics</li>
+      </ul>
+      <em>....Custom branding and bulk supply available on request...</em>
+    </div>
+  </section>
+
+    <section id="services" class="services">
+      <div class="card">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="feature-icon">🎨</div>
+          <div>
+            <h3>Paints & Varnishes</h3>
+            <p style="font-size:13px;opacity:0.9">Decorative and industrial coatings, colour matching, and technical guidance for projects.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="feature-icon">🔁</div>
+          <div>
+            <h3>Plastic Packaging</h3>
+            <p style="font-size:13px;opacity:0.9">Buckets, pails, drums and custom moulded containers designed for chemical storage and transport.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <section id="gallery" style="margin-top:20px">
+      <h2>Gallery</h2>
+      <p style="opacity:0.9">Click image to open preview.</p>
+      <div class="gallery-grid" style="margin-top:12px">
+        <!-- Placeholder SVG images as inline data-uris - replace with real photos -->
+        <div class="thumb"
+          data-title="Paints and Varnishes"
+          data-src="images/paint.jpg">
+          <img src="images/paint.jpg" alt="Paints and Varnishes">
+      </div>
+       <div class="thumb"
+          data-title="Well-stacked bags"
+          data-src="images/ChemBag3.jpg">
+          <img src="images/ChemBag3.jpg" alt="Chemical Bags">
+      </div>
+        <div class="thumb"
+          data-title="Chemical Drums"
+          data-src="images/drums2.jpg">
+          <img src="images/drums2.jpg" alt="Metal Drums">
+        </div>
+        <div class="thumb"
+          data-title="Plastic Buckets"
+          data-src="images/Buckets2.jpg">
+          <img src="images/Buckets2.jpg" alt="Plastic Buckets">
+        </div>
+        <div class="thumb"
+          data-title="Paints and Varnishes"
+          data-src="images/paint3.jpg">
+          <img src="images/paint3.jpg" alt="Varnishes">
+      </div>
+       <div class="thumb"
+          data-title="Liquid Chemicals"
+          data-src="images/chem4.jpg">
+          <img src="images/chem4.jpg" alt="Chemical Kegs">
+      </div>
+        <div class="thumb"
+          data-title="Chemical Bags"
+          data-src="images/bags2.jpg">
+          <img src="images/bags2.jpg" alt="Chemical Bags">
+        </div>
+        <div class="thumb"
+          data-title="Chemical Drums"
+          data-src="images/drums4.jpg">
+          <img src="images/drums4.jpg" alt="Chemical Drums">
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox markup -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+      <div style="max-width:1200px;text-align:center">
+        <img id="lightbox-img" src="" alt="Preview" />
+        <div class="caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+</div>
+
+    <section id="contact" class="contact">
+      <form class="card" onsubmit="event.preventDefault();alert('Form demo.');">
+        <label>Company / Name</label>
+        <input placeholder="Your name or company" required />
+        <label>Email</label>
+        <input type="email" placeholder="you@company.com" required />
+        <label>Message</label>
+        <textarea rows="5" placeholder="Tell us about volumes, product types or ask for SDS"></textarea>
+        <button class="submit" type="submit">Send message</button>
+      </form>
+
+      <div class="card" style="align-self:start">
+        <h3>Quick contact</h3>
+        <p style="font-size:14px;opacity:0.9"><strong>Phone:</strong> +234 706 333 8062<br/><strong>Phone:</strong> +234 913 156 1617<br/><strong>Email:</strong> ranzeedchemicals@gmail.com<br/><strong>Location:</strong> 209 Mowe - Ofada Road, Loburo Junction, Mowe, Ogun State, Nigeria</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-grid container">
+        <div>
+          <strong>RANZEED CHEMICALS ENTERPRISES</strong>
+          <div style="opacity:0.9;margin-top:6px"><em>Supplying quality chemicals, paints & packaging.</em></div>
+        </div>
+        <div style="opacity:0.5">© 2025 RANZEED CHEMICALS</div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<script>
+  const thumbs = document.querySelectorAll('.thumb');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+
+  thumbs.forEach(t => t.addEventListener('click', () => {
+    lbImg.src = t.dataset.src;
+    lbCaption.textContent = t.dataset.title || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+  }));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lbImg) {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
